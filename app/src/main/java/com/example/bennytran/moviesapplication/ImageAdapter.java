@@ -59,7 +59,11 @@ public class ImageAdapter extends BaseAdapter {
 
         Map<String, String> movieInfo = this.movies.get(position).getInfo();
         String imagePath = "http://image.tmdb.org/t/p/w185/" + movieInfo.get("image");
-        Picasso.with(mContext).load(imagePath).fit().into(view);
+        Picasso.with(mContext)
+                .load(imagePath)
+                .placeholder(R.drawable.squirtle)
+                .fit()
+                .into(view);
         return view;
     }
 }
